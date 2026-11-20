@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {fresh,cases,ads,smb,sale,remaining,feedback,rerun,previewRule,addRule,pageStatus} from '../dist/daily/model.mjs';
+const get=id=>cases.find(c=>c.id===id);
+const rule=()=>({field:'campaign',pattern:'DE_E1_LAUNCH',url:smb,scope:'batch',ids:get('rule').ids,until:'',note:''});
+test('批量反馈只处理选择的广告，正常才更新标准',()=>{const s=fresh();feedback(s,get('new'),get('new').ids.slice(0,2),'accepted');assert.equal(remaining(s,get('new')),10);assert.equal(Object.keys(s.standards.new).length,2);assert.throws(()=>feedback(s,get('new'),[], 'accepted'));});
+test('例外需要原因且不改标准',()=>{const s=fresh();assert.throws(()=>feedback(s,get('page'),get('page').ids,'exception'));feedback(s,get('page'),get('page').ids,'exception','本次测试');assert.equal(remaining(s,get('page')),0);assert.equal(s.standards.page,undefined);});
+test('标记有问题和重复运行都不会自动关闭或新增问题',()=>{const s=fresh();feedback(s,get('market'),get('market').ids,'needs_fix');rerun(s);rerun(s);assert.equal(remaining(s,get('market')),1);assert.equal(Object.keys(s.feedback.market).length,1);s.corrections.market='FR';rerun(s);assert.equal(remaining(s,get('market')),1);s.corrections.market='DE';rerun(s);assert.equal(remaining(s,get('market')),0);});
+test('正确规则匹配4条，错误URL保存后仍报页面不符',()=>{const s=fresh();addRule(s,rule());assert.equal(remaining(s,get('rule')),0);const wrong=fresh();addRule(wrong,{...rule(),url:sale});assert.equal(pageStatus(wrong,ads[8]),'URL_MISMATCH');assert.equal(remaining(wrong,get('rule')),4);});
+test('空条件、无匹配、过期规则与规则冲突不能保存',()=>{const s=fresh();for(const changes of [{pattern:''},{pattern:'NO_MATCH'},{until:'2026-11-01'},{scope:'future',pattern:'DE_E1'}])assert.ok(previewRule({...rule(),...changes},s).errors.length);assert.throws(()=>addRule(s,{...rule(),pattern:''}));assert.equal(s.rules.length,0);});
+test('正常页面调整只更新所选对象，规则重叠仍检查',()=>{const s=fresh();feedback(s,get('page'),get('page').ids,'accepted');assert.equal(previewRule({...rule(),scope:'future',pattern:'DE_E1_RMKT',url:sale},s).conflicts.length,0);assert.equal(previewRule({...rule(),scope:'future',pattern:'DE_E1_RMKT'},s).conflicts.length,8);});
+test('修改已确认规则保留旧版本，重新核对后再通过',()=>{const s=fresh();addRule(s,{...rule(),url:sale});assert.equal(remaining(s,get('rule')),4);addRule(s,{...rule(),replaceVersion:2});assert.equal(remaining(s,get('rule')),0);assert.equal(s.rules.length,1);assert.equal(s.ruleHistory[0].url,sale);assert.equal(s.ruleVersion,3);});

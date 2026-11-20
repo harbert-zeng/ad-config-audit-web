@@ -1,0 +1,2 @@
+# Only legacy Excel import tests require this package.
+openpyxl>=3.1,<4

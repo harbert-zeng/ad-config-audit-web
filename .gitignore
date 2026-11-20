@@ -1,0 +1,36 @@
+# Runtime business data and credentials must never be committed.
+local-data/
+private-data/
+state/
+backups/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*cookie*
+*token*
+api-connection.json
+api-probes/
+*export*.csv
+*export*.tsv
+*.xlsx
+*.zip
+*.log
+*.png
+*.jpg
+*.jpeg
+*.pdf
+*.docx
+__pycache__/
+*.pyc
+.venv/
+node_modules/
+.DS_Store
+# Only this intentionally synthetic fixture may be tracked.
+*.json
+!dist/data.json
+!SOURCE_FILES.json

@@ -1,0 +1,599 @@
+{
+  "schema": "ad-config-demo-v1",
+  "demo": true,
+  "snapshot_id": "DEMO-SNAPSHOT-001",
+  "captured_at": "2026-01-01T00:00:00Z",
+  "settings_read_at": "2026-01-01T00:00:00Z",
+  "account_id": "DEMO-ACCOUNT",
+  "account": "Demo 广告账户（虚构）",
+  "project": "Demo",
+  "timezone": "Europe/Berlin",
+  "currency": "USD",
+  "counts": {
+    "campaigns": 2,
+    "adsets": 2,
+    "ads": 4,
+    "creatives": 4
+  },
+  "scope_summary": {
+    "checked_at": "2026-01-01T00:00:00Z",
+    "checked_ads": 4,
+    "included": 4,
+    "excluded": 0,
+    "excluded_by_reason": {},
+    "policy": "synthetic_fixture"
+  },
+  "excluded_ads": [],
+  "status_conflicts": {
+    "unresolved": false,
+    "campaigns": [],
+    "reason": "",
+    "reported_at": "2026-01-01T00:00:00Z"
+  },
+  "campaigns": [
+    {
+      "id": "DEMO-CAMPAIGN-DE",
+      "name": "de_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "daily_budget": {
+        "value": "100",
+        "unit": "USD"
+      },
+      "start_time": "2026-01-01T00:00:00Z",
+      "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "short": "DE",
+      "adset_count": 1,
+      "ad_count": 2,
+      "countries": [
+        "DE"
+      ]
+    },
+    {
+      "id": "DEMO-CAMPAIGN-FR",
+      "name": "fr_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "daily_budget": {
+        "value": "100",
+        "unit": "USD"
+      },
+      "start_time": "2026-01-01T00:00:00Z",
+      "bid_strategy": "LOWEST_COST_WITHOUT_CAP",
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "short": "FR",
+      "adset_count": 1,
+      "ad_count": 2,
+      "countries": [
+        "FR"
+      ]
+    }
+  ],
+  "adsets": [
+    {
+      "id": "DEMO-ADSET-DE",
+      "name": "DE_Demo_Audience",
+      "campaign_id": "DEMO-CAMPAIGN-DE",
+      "campaign_name": "de_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "start_time": "2026-01-01T00:00:00Z",
+      "optimization_goal": "OFFSITE_CONVERSIONS",
+      "attribution_spec": [
+        {
+          "event_type": "CLICK_THROUGH",
+          "window_days": 7
+        }
+      ],
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "targeting": {
+        "age_min": 18,
+        "age_max": 65,
+        "geo_locations": {
+          "countries": [
+            "DE"
+          ]
+        },
+        "publisher_platforms": [
+          "facebook",
+          "instagram"
+        ]
+      }
+    },
+    {
+      "id": "DEMO-ADSET-FR",
+      "name": "FR_Demo_Audience",
+      "campaign_id": "DEMO-CAMPAIGN-FR",
+      "campaign_name": "fr_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "start_time": "2026-01-01T00:00:00Z",
+      "optimization_goal": "OFFSITE_CONVERSIONS",
+      "attribution_spec": [
+        {
+          "event_type": "CLICK_THROUGH",
+          "window_days": 7
+        }
+      ],
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "targeting": {
+        "age_min": 18,
+        "age_max": 65,
+        "geo_locations": {
+          "countries": [
+            "FR"
+          ]
+        },
+        "publisher_platforms": [
+          "facebook",
+          "instagram"
+        ]
+      }
+    }
+  ],
+  "ads": [
+    {
+      "id": "DEMO-AD-DE-1",
+      "name": "DE_Demo_Ad_1",
+      "adset_id": "DEMO-ADSET-DE",
+      "campaign_id": "DEMO-CAMPAIGN-DE",
+      "creative_id": "DEMO-CREATIVE-DE-1",
+      "adset_name": "DE_Demo_Audience",
+      "campaign_name": "de_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "scope_status": "ACTIVE",
+      "scope_reason": "虚构示例：三层开启",
+      "status_checked_at": "2026-01-01T00:00:00Z",
+      "countries": [
+        "DE"
+      ],
+      "body": "Early Black Friday",
+      "title": "Demo product",
+      "description": "Fictional example",
+      "cta": "LEARN_MORE",
+      "url": "https://example.com/eu-de/products/demo-product",
+      "image_hash": null,
+      "video_id": null,
+      "image": "",
+      "image_is_video_cover": false,
+      "features": [],
+      "feature_values": null,
+      "feature_states": {},
+      "media_evidence": "SYNTHETIC",
+      "identity": {
+        "facebook_page_id": "DEMO-PAGE-DE",
+        "facebook_page_name": "Demo DE",
+        "facebook_evidence": "SYNTHETIC",
+        "effective_object_story_id": null,
+        "instagram_media_id": null,
+        "instagram_account_id": "DEMO-IG-DE",
+        "instagram_username": "demo_de",
+        "instagram_name": "Demo DE",
+        "instagram_evidence": "SYNTHETIC",
+        "instagram_name_evidence": "SYNTHETIC",
+        "partnership_status": "UNKNOWN",
+        "checked_at": "2026-01-01T00:00:00Z",
+        "instagram_checked_at": "2026-01-01T00:00:00Z"
+      },
+      "landing_urls": [
+        "https://example.com/eu-de/products/demo-product"
+      ],
+      "landing_evidence": [
+        {
+          "field": "SYNTHETIC",
+          "url": "https://example.com/eu-de/products/demo-product"
+        }
+      ],
+      "landing_checked_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-AD-DE-2",
+      "name": "DE_Demo_Ad_2",
+      "adset_id": "DEMO-ADSET-DE",
+      "campaign_id": "DEMO-CAMPAIGN-DE",
+      "creative_id": "DEMO-CREATIVE-DE-2",
+      "adset_name": "DE_Demo_Audience",
+      "campaign_name": "de_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "scope_status": "ACTIVE",
+      "scope_reason": "虚构示例：三层开启",
+      "status_checked_at": "2026-01-01T00:00:00Z",
+      "countries": [
+        "DE"
+      ],
+      "body": "Last chance",
+      "title": "Demo product",
+      "description": "Fictional example",
+      "cta": "LEARN_MORE",
+      "url": "https://example.com/eu-de/products/demo-product",
+      "image_hash": null,
+      "video_id": null,
+      "image": "",
+      "image_is_video_cover": false,
+      "features": [],
+      "feature_values": null,
+      "feature_states": {},
+      "media_evidence": "SYNTHETIC",
+      "identity": {
+        "facebook_page_id": "DEMO-PAGE-DE",
+        "facebook_page_name": "Demo DE",
+        "facebook_evidence": "SYNTHETIC",
+        "effective_object_story_id": null,
+        "instagram_media_id": null,
+        "instagram_account_id": "DEMO-IG-DE",
+        "instagram_username": "demo_de",
+        "instagram_name": "Demo DE",
+        "instagram_evidence": "SYNTHETIC",
+        "instagram_name_evidence": "SYNTHETIC",
+        "partnership_status": "UNKNOWN",
+        "checked_at": "2026-01-01T00:00:00Z",
+        "instagram_checked_at": "2026-01-01T00:00:00Z"
+      },
+      "landing_urls": [
+        "https://example.com/eu-de/products/demo-product"
+      ],
+      "landing_evidence": [
+        {
+          "field": "SYNTHETIC",
+          "url": "https://example.com/eu-de/products/demo-product"
+        }
+      ],
+      "landing_checked_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-AD-FR-1",
+      "name": "FR_Demo_Ad_1",
+      "adset_id": "DEMO-ADSET-FR",
+      "campaign_id": "DEMO-CAMPAIGN-FR",
+      "creative_id": "DEMO-CREATIVE-FR-1",
+      "adset_name": "FR_Demo_Audience",
+      "campaign_name": "fr_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "scope_status": "ACTIVE",
+      "scope_reason": "虚构示例：三层开启",
+      "status_checked_at": "2026-01-01T00:00:00Z",
+      "countries": [
+        "FR"
+      ],
+      "body": "Early Black Friday",
+      "title": "Demo product",
+      "description": "Fictional example",
+      "cta": "LEARN_MORE",
+      "url": "https://example.com/eu-fr/products/demo-product",
+      "image_hash": null,
+      "video_id": null,
+      "image": "",
+      "image_is_video_cover": false,
+      "features": [],
+      "feature_values": null,
+      "feature_states": {},
+      "media_evidence": "SYNTHETIC",
+      "identity": {
+        "facebook_page_id": "DEMO-PAGE-FR",
+        "facebook_page_name": "Demo FR",
+        "facebook_evidence": "SYNTHETIC",
+        "effective_object_story_id": null,
+        "instagram_media_id": null,
+        "instagram_account_id": "DEMO-IG-FR",
+        "instagram_username": "demo_fr",
+        "instagram_name": "Demo FR",
+        "instagram_evidence": "SYNTHETIC",
+        "instagram_name_evidence": "SYNTHETIC",
+        "partnership_status": "UNKNOWN",
+        "checked_at": "2026-01-01T00:00:00Z",
+        "instagram_checked_at": "2026-01-01T00:00:00Z"
+      },
+      "landing_urls": [
+        "https://example.com/eu-fr/products/demo-product"
+      ],
+      "landing_evidence": [
+        {
+          "field": "SYNTHETIC",
+          "url": "https://example.com/eu-fr/products/demo-product"
+        }
+      ],
+      "landing_checked_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "id": "DEMO-AD-FR-2",
+      "name": "FR_Demo_Ad_2",
+      "adset_id": "DEMO-ADSET-FR",
+      "campaign_id": "DEMO-CAMPAIGN-FR",
+      "creative_id": "DEMO-CREATIVE-FR-2",
+      "adset_name": "FR_Demo_Audience",
+      "campaign_name": "fr_demo_product_launch",
+      "status": "ACTIVE",
+      "effective_status": "ACTIVE",
+      "delivery": {
+        "status": "active",
+        "substatuses": []
+      },
+      "scope_status": "ACTIVE",
+      "scope_reason": "虚构示例：三层开启",
+      "status_checked_at": "2026-01-01T00:00:00Z",
+      "countries": [
+        "FR"
+      ],
+      "body": "Last chance",
+      "title": "Demo product",
+      "description": "Fictional example",
+      "cta": "LEARN_MORE",
+      "url": "https://example.com/eu-fr/products/demo-product",
+      "image_hash": null,
+      "video_id": null,
+      "image": "",
+      "image_is_video_cover": false,
+      "features": [],
+      "feature_values": null,
+      "feature_states": {},
+      "media_evidence": "SYNTHETIC",
+      "identity": {
+        "facebook_page_id": "DEMO-PAGE-FR",
+        "facebook_page_name": "Demo FR",
+        "facebook_evidence": "SYNTHETIC",
+        "effective_object_story_id": null,
+        "instagram_media_id": null,
+        "instagram_account_id": "DEMO-IG-FR",
+        "instagram_username": "demo_fr",
+        "instagram_name": "Demo FR",
+        "instagram_evidence": "SYNTHETIC",
+        "instagram_name_evidence": "SYNTHETIC",
+        "partnership_status": "UNKNOWN",
+        "checked_at": "2026-01-01T00:00:00Z",
+        "instagram_checked_at": "2026-01-01T00:00:00Z"
+      },
+      "landing_urls": [
+        "https://example.com/eu-fr/products/demo-product"
+      ],
+      "landing_evidence": [
+        {
+          "field": "SYNTHETIC",
+          "url": "https://example.com/eu-fr/products/demo-product"
+        }
+      ],
+      "landing_checked_at": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "features": [],
+  "material_groups": [],
+  "landing_groups": [
+    {
+      "key": "DEMO-LANDING-DE",
+      "urls": [
+        "https://example.com/eu-de/products/demo-product"
+      ],
+      "count": 2,
+      "ad_ids": [
+        "DEMO-AD-DE-1",
+        "DEMO-AD-DE-2"
+      ],
+      "campaign_names": [
+        "de_demo_product_launch"
+      ],
+      "adset_names": [
+        "DE_Demo_Audience"
+      ],
+      "suggested_rules": [
+        {
+          "field": "campaign",
+          "op": "contains",
+          "value": "de_demo_",
+          "second": false,
+          "field2": "adset",
+          "op2": "contains",
+          "value2": "",
+          "confirmed": false,
+          "url": "https://example.com/eu-de/products/demo-product",
+          "matched_count": 2
+        }
+      ],
+      "uncovered_suggestion_count": 0
+    },
+    {
+      "key": "DEMO-LANDING-FR",
+      "urls": [
+        "https://example.com/eu-fr/products/demo-product"
+      ],
+      "count": 2,
+      "ad_ids": [
+        "DEMO-AD-FR-1",
+        "DEMO-AD-FR-2"
+      ],
+      "campaign_names": [
+        "fr_demo_product_launch"
+      ],
+      "adset_names": [
+        "FR_Demo_Audience"
+      ],
+      "suggested_rules": [
+        {
+          "field": "campaign",
+          "op": "contains",
+          "value": "fr_demo_",
+          "second": false,
+          "field2": "adset",
+          "op2": "contains",
+          "value2": "",
+          "confirmed": false,
+          "url": "https://example.com/eu-fr/products/demo-product",
+          "matched_count": 2
+        }
+      ],
+      "uncovered_suggestion_count": 0
+    }
+  ],
+  "landing_source": "2026-01-01T00:00:00Z",
+  "coverage": {
+    "urls": 4,
+    "body": 4,
+    "media_and_copy": 0,
+    "images": 0,
+    "identity": true,
+    "utm": false,
+    "all_enhancements": false,
+    "visual_content_checked": false
+  },
+  "rule_version": "demo-v1",
+  "source_note": "全部为程序创建的虚构示例，不来自任何真实账户。",
+  "identity_summary": {
+    "checked_at": "2026-01-01T00:00:00Z",
+    "groups": [
+      {
+        "country": "DE",
+        "ad_ids": [
+          "DEMO-AD-DE-1",
+          "DEMO-AD-DE-2"
+        ],
+        "total": 2,
+        "known": 2,
+        "pages": [
+          {
+            "page_id": "DEMO-PAGE-DE",
+            "name": "Demo DE",
+            "count": 2,
+            "share": 1.0,
+            "ad_ids": [
+              "DEMO-AD-DE-1",
+              "DEMO-AD-DE-2"
+            ]
+          }
+        ],
+        "recommended_page_id": "DEMO-PAGE-DE",
+        "confirmed": false,
+        "exception_count": 0,
+        "instagram_accounts": [
+          {
+            "account_id": "DEMO-IG-DE",
+            "username": "demo_de",
+            "name": "Demo DE",
+            "count": 2,
+            "share": 1.0,
+            "ad_ids": [
+              "DEMO-AD-DE-1",
+              "DEMO-AD-DE-2"
+            ]
+          }
+        ],
+        "instagram_known": 2,
+        "recommended_instagram_id": "DEMO-IG-DE"
+      },
+      {
+        "country": "FR",
+        "ad_ids": [
+          "DEMO-AD-FR-1",
+          "DEMO-AD-FR-2"
+        ],
+        "total": 2,
+        "known": 2,
+        "pages": [
+          {
+            "page_id": "DEMO-PAGE-FR",
+            "name": "Demo FR",
+            "count": 2,
+            "share": 1.0,
+            "ad_ids": [
+              "DEMO-AD-FR-1",
+              "DEMO-AD-FR-2"
+            ]
+          }
+        ],
+        "recommended_page_id": "DEMO-PAGE-FR",
+        "confirmed": false,
+        "exception_count": 0,
+        "instagram_accounts": [
+          {
+            "account_id": "DEMO-IG-FR",
+            "username": "demo_fr",
+            "name": "Demo FR",
+            "count": 2,
+            "share": 1.0,
+            "ad_ids": [
+              "DEMO-AD-FR-1",
+              "DEMO-AD-FR-2"
+            ]
+          }
+        ],
+        "instagram_known": 2,
+        "recommended_instagram_id": "DEMO-IG-FR"
+      }
+    ],
+    "account_available_pages": [
+      {
+        "page_id": "DEMO-PAGE-DE",
+        "page_name": "Demo DE"
+      },
+      {
+        "page_id": "DEMO-PAGE-FR",
+        "page_name": "Demo FR"
+      }
+    ],
+    "facebook_post_owner_count": 4,
+    "facebook_named_count": 4,
+    "instagram_media_count": 0,
+    "instagram_identity_count": 4,
+    "partnership_verified_count": 0,
+    "basis": "SYNTHETIC",
+    "limitations": [
+      "虚构数据，不能用于业务判断"
+    ],
+    "instagram_named_count": 4,
+    "instagram_accounts": [
+      {
+        "account_id": "DEMO-IG-DE",
+        "username": "demo_de",
+        "name": "Demo DE",
+        "count": 2,
+        "share": 1.0,
+        "ad_ids": [
+          "DEMO-AD-DE-1",
+          "DEMO-AD-DE-2"
+        ],
+        "name_evidence": "SYNTHETIC",
+        "verified_ad_id": "DEMO-AD-DE-1"
+      },
+      {
+        "account_id": "DEMO-IG-FR",
+        "username": "demo_fr",
+        "name": "Demo FR",
+        "count": 2,
+        "share": 1.0,
+        "ad_ids": [
+          "DEMO-AD-FR-1",
+          "DEMO-AD-FR-2"
+        ],
+        "name_evidence": "SYNTHETIC",
+        "verified_ad_id": "DEMO-AD-FR-1"
+      }
+    ],
+    "instagram_checked_at": "2026-01-01T00:00:00Z",
+    "instagram_source": "SYNTHETIC"
+  }
+}
